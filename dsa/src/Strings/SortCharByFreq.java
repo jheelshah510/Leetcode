@@ -48,7 +48,8 @@ public class SortCharByFreq {
         System.out.println(mp2);
         StringBuilder ans = new StringBuilder();
 
-        for (int i = s.length() - 1; i >= 0; i--) {
+        for (int i = s.length() ; i >= 0; i--) {
+            System.out.println(mp2.get(i));
             if (mp2.containsKey(i)) {
                 ArrayList<Character> chars = mp2.get(i);
                 for (char c : chars) {
