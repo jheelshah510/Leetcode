@@ -13,8 +13,8 @@ public class RomanToInteger {
     }
 
     public static int romanToInt(String s) {
-        int ans = 0;
+        int res = 0;
 
-        return ans;
+        return res;
     }
 }
