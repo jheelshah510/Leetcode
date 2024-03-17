@@ -16,7 +16,7 @@ public class DeleteNode {
             temp.next = new Node(sc.nextInt());
             temp = temp.next;
         }
-        System.out.println("Node to be deleted: ");
+        System.out.println("NodeTwo to be deleted: ");
         int k = sc.nextInt();
 
         Node newHead = head;
