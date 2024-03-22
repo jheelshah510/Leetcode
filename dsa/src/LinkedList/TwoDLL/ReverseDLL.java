@@ -2,7 +2,7 @@ package LinkedList.TwoDLL;
 
 import java.util.Scanner;
 
-public class IntroToTwoDLL {
+public class ReverseDLL {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -13,29 +13,28 @@ public class IntroToTwoDLL {
             arr[i] = sc.nextInt();
         }
 
-        NodeTwo head = constructDLL(arr);
+        NodeTwo head = reverseDLL(arr);
 
         System.out.println(head);
     }
 
-    public static NodeTwo constructDLL(int[] arr){
-        NodeTwo head = null;
+    public static NodeTwo reverseDLL(int[] arr)
+    {
 
-        if (arr.length == 0) {
+        NodeTwo head = new NodeTwo(arr[0]);
+
+        if(head == null || head.next == null){
             return head;
         }
 
-        head = new NodeTwo(arr[0]);
-
         NodeTwo temp = head;
 
-        for(int i = 1;i<arr.length;i++){
-            temp.next = new NodeTwo(arr[i]);
-            temp.next.prev = temp;
-            temp = temp.next;
+        while(temp.next != null){
+            NodeTwo tr = temp;
+
+
         }
 
         return head;
-
     }
 }
