@@ -14,8 +14,6 @@ public class LengthOfLoop {
         }
         Node head = new Node(arr[0]);
 
-
-
         for (int i = 1; i < arr.length; i++) {
 
             head.next = new Node(arr[i]);
