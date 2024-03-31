@@ -32,6 +32,9 @@ public class RemoveNFrmLast {
     }
 
     public static Node removeNthFromEnd(Node head,int position){
+
+        if(head == null || head.next == null) return null;
+
         Node slow = head;
         Node fast = head;
         Node prev = null;
