@@ -2,7 +2,7 @@ package LinkedList.OneDLL;
 
 import java.util.Scanner;
 
-public class RemoveNFrmLast {
+public class DeleteMiddle {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -23,27 +23,21 @@ public class RemoveNFrmLast {
             head = head.next;
 
         }
-        System.out.println("Position from end");
-        int position = sc.nextInt();
 
-        Node oddEven = removeNthFromEnd(head,position);
+        Node oddEven = deleteMiddle(head);
 
         System.out.println(oddEven);
     }
 
-    public static Node removeNthFromEnd(Node head,int position){
+    public static Node deleteMiddle(Node head){
         Node slow = head;
         Node fast = head;
-        Node prev = null;
 
-        while (fast != null && fast.next != null) {
-            prev = slow;
+        while(fast!= null &&  fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
-
-
-        prev.next = slow.next;
+        slow.next = slow.next.next;
 
         return head;
     }
