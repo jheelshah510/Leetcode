@@ -10,7 +10,15 @@ public class CountGoodNoS {
 
         System.out.println(countGoodNumbers(x));
     }
-    private static int countGoodNumbers(int x){
-        return 2;
+    static long mod = 10000007;
+    private static long countGoodNumbers(int x){
+       if(x == 0){
+           return 1;
+       }
+       if(x % 2 != 0){
+           return (5 * countGoodNumbers(x -1))%mod;
+       }
+       else return (4 * countGoodNumbers(x-1))%mod;
+       
     }
 }

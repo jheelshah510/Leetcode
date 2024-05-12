@@ -25,8 +25,19 @@ public class Atoi {
             sign = 1;
             i++;
         }
+        int j = i;
+        while(j< s.length()){
+            if(Character.isDigit(s.charAt(j))){
+                j++;
+            }
+            else {
+                break;
+            }
 
-        int ans = atoi(i,s);
+        }
+        System.out.println("AJ here"+j);
+
+        int ans = atoi(0,s.substring(i,j));
         return sign * ans;
 
     }
@@ -35,7 +46,6 @@ public class Atoi {
             return 0;
         }
         System.out.println(s.charAt(s.length()-1));
-        System.out.println(s.substring(i,s.length()-1));
         return s.charAt(s.length()-1)- '0' + atoi(i,s.substring(i,s.length()-1))*10;
     }
 
