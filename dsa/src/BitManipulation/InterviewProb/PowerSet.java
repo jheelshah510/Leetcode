@@ -21,9 +21,14 @@ public class PowerSet {
     private static List<List<Integer>> subsets(int[] nums){
         List<List<Integer>> ans = new ArrayList<>();
 
-        for(int i = 0;i<Math.pow(2,nums.length) -1;i++){
+        for(int i = 0;i<(1<<nums.length);i++){
             List<Integer> temp = new ArrayList<>();
-
+            for(int j = 0;j<nums.length;j++){
+                if((i & (1 << j)) > 0){
+                    temp.add(nums[j]);
+                }
+            }
+            ans.add(temp);
         }
         return ans;
 
