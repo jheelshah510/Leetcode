@@ -14,7 +14,7 @@ public class TrappinRainWat {
             height[i] = sc.nextInt();
         }
 
-        System.out.println(trap[height]);
+        System.out.println(trap(height));
     }
 
     private static int trap(int[] height){
