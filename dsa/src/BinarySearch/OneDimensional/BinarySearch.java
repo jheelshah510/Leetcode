@@ -1,6 +1,5 @@
 package BinarySearch.OneDimensional;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,22 +11,23 @@ public class BinarySearch {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        search(arr,sc.nextInt());
+        search(arr, sc.nextInt());
     }
-    private static int search(int[] arr,int target){
-        Arrays.sort(arr);
-        int start = 0;
-        int end = arr.length-1;
-        int mid = (start+end)/2;
 
-        while (start <= end){
-            if(arr[mid] == target){
+    private static int search(int[] nums, int target) {
+        Arrays.sort(nums);
+        int start = 0;
+        int end = nums.length - 1;
+        int mid = (start + end) / 2;
+
+        while (start <= end) {
+            if (nums[mid] == target) {
                 return mid;
-            }
-            else if (arr[mid] > target){
-                end = mid-1;
-            }
-            else start = mid+1;
+            } else if (nums[mid] > target) {
+                end = mid - 1;
+            } else start = mid + 1;
+
+            mid = (start + end) / 2;
         }
         return -1;
     }
