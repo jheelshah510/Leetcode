@@ -10,7 +10,7 @@ public class FindSmallestDivisor {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        smallestDivisor(arr, sc.nextInt(), sc.nextInt());
+        smallestDivisor(arr, sc.nextInt());
     }
     private static int smallestDivisor(int[] nums,int threshold){
         int n = nums.length;
