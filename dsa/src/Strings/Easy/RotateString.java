@@ -13,6 +13,6 @@ public class RotateString {
             return false;
         }
         String concatenated = s + s;
-        return concatenated.contains(goal);;
+        return concatenated.contains(goal);
     }
 }
