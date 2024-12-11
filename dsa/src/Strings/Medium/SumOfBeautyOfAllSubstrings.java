@@ -1,4 +1,4 @@
-package Strings;
+package Strings.Medium;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -22,7 +22,7 @@ public class SumOfBeautyOfAllSubstrings {
             HashMap<Character, Integer> mp = new HashMap<>();
             for (int j = i; j < len; j++) {
                 char ch = s.charAt(j);
-                mp.put(ch, mp.getOrDefault(ch, 0) + 1); // Update frequency
+                mp.put(ch, mp.getOrDefault(ch, 0) + 1);
                 total += calculateBeauty(mp);
             }
         }
