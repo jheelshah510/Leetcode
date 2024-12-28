@@ -1,8 +1,8 @@
 package LinkedList.OneDLL;
 
 public class Node {
-    int data;
-    Node next;
+    public int data;
+    public Node next;
 
     Node()
     {
@@ -10,7 +10,7 @@ public class Node {
         this.next = null;
     }
 
-    Node(int data)
+    public Node(int data)
     {
         this.data = data;
         this.next = null;
