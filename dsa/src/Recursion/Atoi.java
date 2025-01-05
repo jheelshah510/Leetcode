@@ -35,7 +35,6 @@ public class Atoi {
             }
 
         }
-        System.out.println("AJ here"+j);
 
         int ans = atoi(0,s.substring(i,j));
         return sign * ans;
@@ -45,7 +44,6 @@ public class Atoi {
         if(s.length() == 0){
             return 0;
         }
-        System.out.println(s.charAt(s.length()-1));
         return s.charAt(s.length()-1)- '0' + atoi(i,s.substring(i,s.length()-1))*10;
     }
 
