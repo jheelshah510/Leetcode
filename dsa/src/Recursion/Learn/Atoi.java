@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Learn;
 
 import java.util.Scanner;
 
@@ -37,6 +37,8 @@ public class Atoi {
         }
 
         int ans = atoi(0,s.substring(i,j));
+        Long val = 4L;
+        int k = (Integer.parseInt(val.toString()));
         return sign * ans;
 
     }
