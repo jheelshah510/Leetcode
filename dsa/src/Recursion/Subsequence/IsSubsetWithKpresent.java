@@ -20,8 +20,6 @@ public class IsSubsetWithKpresent {
             arr[i] = sc.nextInt();
         }
 
-
-
         System.out.println(isSubsetPresent(n,k,arr));
     }
     private static boolean isSubsetPresent(int n,int k,int[] arr){
