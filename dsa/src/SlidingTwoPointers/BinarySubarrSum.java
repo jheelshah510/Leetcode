@@ -1,5 +1,6 @@
 package SlidingTwoPointers;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class BinarySubarrSum {
@@ -19,29 +20,28 @@ public class BinarySubarrSum {
     }
 
     private static int numSubarraysWithSum(int[] nums,int goal){
+        return lessThanGoal(nums,goal) - lessThanGoal(nums,goal-1);
+    }
+
+    private static int lessThanGoal(int[] nums,int goal){
+        if(goal < 0) return 0;
         int left = 0;
         int right = 0;
-        int n = nums.length;
-        int count = 0;
-        int temp = 0;
-        while(right < n){
-            if(nums[right] + temp > goal) {
-                temp -= nums[left];
+        int sum = 0;
+        int cnt = 0;
+        while(right < nums.length){
+            sum += nums[right];
+
+            while(sum > goal){
+                sum -= nums[left];
                 left++;
             }
+            cnt += right-left+1;
 
-            if(nums[right] + temp == goal){
-                temp += nums[right];
-                right++;
-                count++;
-            }
-            else if(nums[right] + temp < goal){
-                temp += nums[right];
-                right++;
-            }
-
+            right++;
         }
-        return count;
+
+        return cnt;
     }
 
 }

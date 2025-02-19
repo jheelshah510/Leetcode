@@ -17,7 +17,7 @@ public class LongestSubstringWithoutRepeat {
         int right = 0;
         HashMap<Character,Integer>  mpp= new HashMap<>();
 
-        while(right < s.length()){
+        while(right < len){
             if(mpp.containsKey(s.charAt(right))){
                 if(mpp.get(s.charAt(right)) >= left){
                     left = mpp.get(s.charAt(right)) + 1;
