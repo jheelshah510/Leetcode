@@ -23,9 +23,25 @@ public class KthLargestElInHeap {
         for (int i = 0;i<n;i++){
             minHeap.add(nums[i]);
         }
-        while (k>0){
+        while (k>1){
             minHeap.poll();
+            k--;
         }
         return (minHeap.peek() == null) ? null : minHeap.peek();
+    }
+
+    private static int kthSmallest(int[] arr,int k){
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        int n = arr.length;
+
+        for (int i = 0;i<n;i++){
+            minHeap.add(arr[i]);
+        }
+        while(k > 1){
+            k--;
+            minHeap.poll();
+        }
+        return minHeap.peek();
+
     }
 }
