@@ -18,16 +18,16 @@ public class KthLargestElInHeap {
     }
 
     private static int findKthLargest(int[] nums,int k){
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
         int n = nums.length;
         for (int i = 0;i<n;i++){
-            minHeap.add(nums[i]);
+            maxHeap.add(nums[i]);
         }
         while (k>1){
-            minHeap.poll();
+            maxHeap.poll();
             k--;
         }
-        return (minHeap.peek() == null) ? null : minHeap.peek();
+        return (maxHeap.peek() == null) ? null : maxHeap.peek();
     }
 
     private static int kthSmallest(int[] arr,int k){
