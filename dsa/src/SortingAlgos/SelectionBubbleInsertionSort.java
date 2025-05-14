@@ -3,7 +3,7 @@ package SortingAlgos;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class SelectionBubbleSort {
+public class SelectionBubbleInsertionSort {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int sz = sc.nextInt();
@@ -14,6 +14,7 @@ public class SelectionBubbleSort {
         }
         selectSort(arr, sz);
         bubble(arr, sz);
+        insertion(arr, sz);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -25,13 +26,37 @@ public class SelectionBubbleSort {
                     minIndex = j;
                 }
             }
-            int temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = temp;
+            swap(i,minIndex,arr);
         }
     }
+
     private static void bubble(int[] arr, int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(j,j+1,arr);
+                }
+            }
+        }
+    }
 
+    private static void insertion(int[] arr, int n) {
+        for (int i = 0; i < n; i++) {
+            int ind = i;
 
+            while (ind >= 1) {
+                if (arr[ind - 1] <= arr[ind]) break;
+                else {
+                    swap(ind,ind-1,arr);
+                }
+                ind--;
+            }
+        }
+    }
+
+    private static void swap(int i,int j,int[] arr){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
