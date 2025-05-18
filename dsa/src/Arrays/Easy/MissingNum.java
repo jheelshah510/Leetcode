@@ -14,20 +14,28 @@ public class MissingNum {
         System.out.println(missingNumber(arr));
     }
 
-    private static int missingNumber(int[] nums){
+    private static int missingNumber(int[] nums) {
+//        int n = nums.length;
+//
+//        Arrays.sort(nums);
+//
+//        if(nums[0] != 0){
+//            return 0;
+//        }
+//
+//        for(int i = 1;i<n;i++){
+//            if(nums[i-1]+1 != nums[i]){
+//                return nums[i-1]+1;
+//            }
+//        }
+//        return n;
         int n = nums.length;
 
-        Arrays.sort(nums);
-
-        if(nums[0] != 0){
-            return 0;
+        int summation = (n*(n+1))/2;
+        int s2 = 0;
+        for(int i = 0;i<n;i++){
+            s2+= nums[i];
         }
-
-        for(int i = 1;i<n;i++){
-            if(nums[i-1]+1 != nums[i]){
-                return nums[i-1]+1;
-            }
-        }
-        return n;
+        return summation-s2;
     }
 }

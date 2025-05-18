@@ -15,14 +15,12 @@ public class MaxConsecOnes {
     private static int findMaxConsecutiveOnes(int[] nums){
         int k = 0;
         int ans = 0;
-        int n = nums.length;
 
-        for(int i = 0;i<n;i++){
-            if(nums[i] == 1){
+        for (int num : nums) {
+            if (num == 1) {
                 k++;
-                ans = Math.max(ans,k);
-            }
-            else {
+                ans = Math.max(ans, k);
+            } else {
                 k = 0;
             }
         }
