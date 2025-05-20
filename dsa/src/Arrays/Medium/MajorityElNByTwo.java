@@ -15,22 +15,16 @@ public class MajorityElNByTwo {
         System.out.println(majorityElement(arr));
     }
     private static int majorityElement(int[] nums){
-        HashMap<Integer,Integer> mp = new HashMap<>();
+        int count = 0;
+        int candidate = 0;
 
-        int n = nums.length;
-
-        for(int i = 0;i<n;i++){
-            if(mp.containsKey(nums[i])){
-                if((mp.get(nums[i])+1) > n/2){
-                    return nums[i];
-                }
-                mp.put(nums[i],mp.get(nums[i])+1);
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
             }
-            else {
-                mp.put(nums[i],1);
-            }
+            count += (num == candidate) ? 1 : -1;
         }
 
-        return nums[0];
+        return candidate;
     }
 }
