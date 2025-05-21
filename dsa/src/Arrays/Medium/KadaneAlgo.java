@@ -1,5 +1,6 @@
 package Arrays.Medium;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class KadaneAlgo {
@@ -28,5 +29,30 @@ public class KadaneAlgo {
             }
         }
         return maxSum;
+    }
+
+    private static int[] printSubArray(int[] nums){
+
+        int n = nums.length;
+        int maxSum = Integer.MIN_VALUE;
+        int currSum = 0;
+        int start = 0, tempStart = 0, end = 0;
+
+        for (int i = 0; i < n; i++) {
+            currSum += nums[i];
+
+            if (currSum > maxSum) {
+                maxSum = currSum;
+                start = tempStart;
+                end = i;
+            }
+
+            if (currSum < 0) {
+                currSum = 0;
+                tempStart = i + 1;
+            }
+        }
+
+        return Arrays.copyOfRange(nums, start, end + 1);
     }
 }

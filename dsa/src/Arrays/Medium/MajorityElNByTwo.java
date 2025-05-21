@@ -15,16 +15,23 @@ public class MajorityElNByTwo {
         System.out.println(majorityElement(arr));
     }
     private static int majorityElement(int[] nums){
-        int count = 0;
-        int candidate = 0;
-
-        for (int num : nums) {
-            if (count == 0) {
-                candidate = num;
+        int el = nums[0];
+        int count = 1;
+        int i = 1;
+        int n = nums.length;
+        while(i<n){
+            if(nums[i] == el){
+                count++;
             }
-            count += (num == candidate) ? 1 : -1;
+            else if(nums[i] != el && count == 0){
+                el = nums[i];
+                count++;
+            }
+            else{
+                count--;
+            }
+            i++;
         }
-
-        return candidate;
+        return el;
     }
 }
