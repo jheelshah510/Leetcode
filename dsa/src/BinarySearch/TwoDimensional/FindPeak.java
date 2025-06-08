@@ -22,7 +22,7 @@ public class FindPeak {
         while (start <= end){
             int maxi = maxEl(mat,mid);
             int left = (mid > 0) ? mat[maxi][mid-1] : -1;
-            int right = (mid < mat[0].length) ? mat[maxi][mid+1] : -1;
+            int right = (mid < mat[0].length-1) ? mat[maxi][mid+1] : -1;
 
             if(mat[maxi][mid] > left && mat[maxi][mid] > right){
                 return new int[]{maxi,mid};

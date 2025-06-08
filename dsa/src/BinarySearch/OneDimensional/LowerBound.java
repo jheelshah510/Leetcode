@@ -20,7 +20,7 @@ public class LowerBound {
 
         while (start<=end){
             if(arr[mid] == k){
-                return k;
+                return mid;
             }
             else if (arr[mid] < k){
                 ans = mid;

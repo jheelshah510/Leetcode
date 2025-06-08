@@ -30,5 +30,29 @@ public class MergeIntervals {
         }
         return lt.toArray(new int[lt.size()][]);
 
+//        List<List<Integer>> ans = new ArrayList<>();
+//        int n = intervals.length;
+//        List<Integer> temp = new ArrayList<>();
+//        temp.add(intervals[0][0]);
+//        temp.add(intervals[0][1]);
+//        ans.add(temp);
+//        for(int i = 1;i<n;i++){
+//            if(intervals[i][0] < ans.getLast().get(1)){
+//                int lowest = ans.getLast().get(0);
+//                int highest = Math.max(ans.getLast().get(1),intervals[0][1]);
+//                ans.removeLast();
+//                ans.add(List.of(lowest,highest));
+//            }
+//            else {
+//                ans.add(List.of(intervals[i][0],intervals[i][1]));
+//            }
+//        }
+//        int[][] newAns = new int[ans.size()][2];
+//
+//        for(int i = 0;i<newAns.length;i++){
+//            newAns[i][0] = ans.get(i).get(0);
+//            newAns[i][1] = ans.get(i).get(1);
+//        }
+//        return newAns;
     }
 }
